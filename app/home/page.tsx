@@ -365,7 +365,7 @@ export default function HomePage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setSelectedTodo(todo)}
-                      className="flex-shrink-0 opacity-0 group-hover:opacity-100 p-2 text-gray-400 hover:text-blue-600 hover:bg-white rounded-lg transition-all duration-200"
+                      className="flex-shrink-0 md:opacity-0 group-hover:opacity-100 p-2 text-gray-400 hover:text-blue-600 hover:bg-white rounded-lg transition-all duration-200"
                       title="Edit todo"
                     >
                       <svg
@@ -384,7 +384,7 @@ export default function HomePage() {
                     </button>
                     <button
                       onClick={() => handleDelete(todo.id)}
-                      className="flex-shrink-0 opacity-0 group-hover:opacity-100 p-2 text-gray-400 hover:text-red-600 hover:bg-white rounded-lg transition-all duration-200"
+                      className="flex-shrink-0 md:opacity-0 group-hover:opacity-100 p-2 text-gray-400 hover:text-red-600 hover:bg-white rounded-lg transition-all duration-200"
                       title="Delete todo"
                     >
                       <svg
