@@ -147,7 +147,9 @@ function EditTodo({
 export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [todos, setTodos] = useState<{ id: string; text: string; completed: boolean }[]>([]);
+  const [todos, setTodos] = useState<
+    { id: string; text: string; completed: boolean }[]
+  >([]);
   const [selectedTodo, setSelectedTodo] = useState<{
     id: string;
     text: string;
@@ -220,7 +222,9 @@ export default function HomePage() {
       await updateDoc(todoRef, { text });
 
       setTodos((prev) =>
-        prev.map((todo) => (todo.id === id ? { ...todo, text, completed } : todo))
+        prev.map((todo) =>
+          todo.id === id ? { ...todo, text, completed } : todo
+        )
       );
       setSelectedTodo(null);
     } catch (error) {
@@ -335,12 +339,14 @@ export default function HomePage() {
                       onClick={() => toggleComplete(todo.id, !todo.completed)}
                       aria-label="Toggle complete"
                       className={`w-5 h-5 rounded border border-gray-400 flex items-center justify-center cursor-pointer ${
-                        todo.completed ? "bg-blue-600 border-blue-600" : "bg-white"
+                        todo.completed
+                          ? "bg-blue-600 border-blue-600"
+                          : "bg-white"
                       }`}
                     >
                       {todo.completed && (
                         <svg
-                          className="w-4 h-4 text-white"
+                          className="w-2 h-2 md:w-4 md:h-4 text-white"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
